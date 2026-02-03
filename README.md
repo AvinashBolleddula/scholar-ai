@@ -788,6 +788,20 @@ def test_search_no_api_key():
 ```
 
 ---
+## Future Enhancements
+
+| Feature | Description | Priority |
+|---------|-------------|----------|
+| **RAG Integration** | Vector database (Pinecone/Qdrant) for semantic search over papers | High |
+| **Web UI** | React/Next.js frontend with chat interface | High |
+| **Multi-user Auth** | OAuth 2.0 / JWT for user management | Medium |
+| **Usage Analytics** | Track API usage, costs per user | Medium |
+| **Infrastructure as Code** | Terraform for GCP resource management | Medium |
+| **Streaming Responses** | Server-Sent Events for real-time chat | Low |
+| **PDF Processing** | Full-text extraction and indexing from papers | Low |
+| **Multi-model Support** | Switch between Claude, GPT-4, Gemini | Low |
+
+---
 
 ## Contributing
 
