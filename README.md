@@ -186,7 +186,7 @@ sequenceDiagram
 | **Two-layer Authentication** | API keys on both FastAPI and MCP Server |
 | **Rate Limiting** | Per-endpoint limits (5-30 req/min) |
 | **Input Validation** | Pydantic models with constraints |
-| **Request Timeouts** | 10s for endpoints, 30s for chat |
+| **Request Timeouts** | 10s for endpoints, 90s for chat |
 | **Response Caching** | In-memory cache for read-only endpoints |
 
 ### DevOps & Observability
