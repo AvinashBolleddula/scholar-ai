@@ -1,0 +1,43 @@
+name: Deploy MCP Server
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'streamablehttp/**'
+
+env:
+  REGION: us-central1
+  SERVICE: research-server-run
+  IMAGE: us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/research-server-repo/research_server:${{ github.sha }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker
+        run: gcloud auth configure-docker us-central1-docker.pkg.dev
+
+      - name: Build
+        run: docker build -t ${{ env.IMAGE }} ./streamablehttp
+
+      - name: Push
+        run: docker push ${{ env.IMAGE }}
+
+      - name: Deploy
+        run: |
+          gcloud run deploy ${{ env.SERVICE }} \
+            --image ${{ env.IMAGE }} \
+            --region ${{ env.REGION }} \
+            --allow-unauthenticated \
+            --memory 1Gi \
+            --port 8000 \
+            --set-env-vars="MCP_API_KEY=${{ secrets.MCP_API_KEY }}"

@@ -1,0 +1,9 @@
+# Root .gitignore
+**/.env
+**/.venv
+**/venv
+**/__pycache__
+*.pyc
+github-actions-key.json
+**/.DS_Store
+.DS_Store

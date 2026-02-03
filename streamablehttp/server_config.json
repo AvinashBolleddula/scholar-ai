@@ -1,0 +1,30 @@
+{
+    "mcpServers": {
+        
+        "filesystem": {
+            "transport": "stdio",
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-filesystem",
+                "."
+            ]
+        },
+        
+        "research": {
+            "transport": "streamable-http",
+            "url": "https://research-server-run-225547455314.us-central1.run.app/mcp",
+            "headers": {
+                "X-API-Key": "41a88bc769ef26cdd5ac2a89b433380a7c9cff4721ab706e34f71ba9d11d0a6d"
+            }
+
+        },
+        
+        "fetch": {
+            "transport": "stdio",
+            "command": "uvx",
+            "args": ["mcp-server-fetch"]
+        }
+    }
+}
+  

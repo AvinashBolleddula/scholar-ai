@@ -1,0 +1,26 @@
+{
+    "mcpServers": {
+        
+        "filesystem": {
+            "transport": "stdio",
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-filesystem",
+                "."
+            ]
+        },
+        
+        "research": {
+            "transport": "sse",
+            "url": "http://127.0.0.1:8001/sse"
+        },
+        
+        "fetch": {
+            "transport": "stdio",
+            "command": "uvx",
+            "args": ["mcp-server-fetch"]
+        }
+    }
+}
+  

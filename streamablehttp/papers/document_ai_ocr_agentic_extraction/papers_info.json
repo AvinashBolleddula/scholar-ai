@@ -1,0 +1,28 @@
+{
+  "2403.07553v1": {
+    "title": "The future of document indexing: GPT and Donut revolutionize table of content processing",
+    "authors": [
+      "Degaga Wolde Feyisa",
+      "Haylemicheal Berihun",
+      "Amanuel Zewdu",
+      "Mahsa Najimoghadam",
+      "Marzieh Zare"
+    ],
+    "summary": "Industrial projects rely heavily on lengthy, complex specification documents, making tedious manual extraction of structured information a major bottleneck. This paper introduces an innovative approach to automate this process, leveraging the capabilities of two cutting-edge AI models: Donut, a model that extracts information directly from scanned documents without OCR, and OpenAI GPT-3.5 Turbo, a robust large language model. The proposed methodology is initiated by acquiring the table of contents (ToCs) from construction specification documents and subsequently structuring the ToCs text into JSON data. Remarkable accuracy is achieved, with Donut reaching 85% and GPT-3.5 Turbo reaching 89% in effectively organizing the ToCs. This landmark achievement represents a significant leap forward in document indexing, demonstrating the immense potential of AI to automate information extraction tasks across diverse document types, boosting efficiency and liberating critical resources in various industries.",
+    "pdf_url": "https://arxiv.org/pdf/2403.07553v1",
+    "published": "2024-03-12"
+  },
+  "2601.11816v1": {
+    "title": "POLARIS: Typed Planning and Governed Execution for Agentic AI in Back-Office Automation",
+    "authors": [
+      "Zahra Moslemi",
+      "Keerthi Koneru",
+      "Yen-Ting Lee",
+      "Sheethal Kumar",
+      "Ramesh Radhakrishnan"
+    ],
+    "summary": "Enterprise back office workflows require agentic systems that are auditable, policy-aligned, and operationally predictable, capabilities that generic multi-agent setups often fail to deliver. We present POLARIS (Policy-Aware LLM Agentic Reasoning for Integrated Systems), a governed orchestration framework that treats automation as typed plan synthesis and validated execution over LLM agents. A planner proposes structurally diverse, type checked directed acyclic graphs (DAGs), a rubric guided reasoning module selects a single compliant plan, and execution is guarded by validator gated checks, a bounded repair loop, and compiled policy guardrails that block or route side effects before they occur. Applied to document centric finance tasks, POLARIS produces decision grade artifacts and full execution traces while reducing human intervention. Empirically, POLARIS achieves a micro F1 of 0.81 on the SROIE dataset and, on a controlled synthetic suite, achieves 0.95 to 1.00 precision for anomaly routing with preserved audit trails. These evaluations constitute an initial benchmark for governed Agentic AI. POLARIS provides a methodological and benchmark reference for policy-aligned Agentic AI. Keywords Agentic AI, Enterprise Automation, Back-Office Tasks, Benchmarks, Governance, Typed Planning, Evaluation",
+    "pdf_url": "https://arxiv.org/pdf/2601.11816v1",
+    "published": "2026-01-16"
+  }
+}
