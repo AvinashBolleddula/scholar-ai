@@ -196,7 +196,7 @@ sequenceDiagram
 | **CI/CD** | GitHub Actions with path-based triggers |
 | **Monitoring** | Cloud Monitoring dashboards |
 | **Alerting** | Latency, error rate, uptime alerts |
-| **Auto-scaling** | 2-50 instances based on load |
+| **Auto-scaling** | 2-10 instances based on load |
 
 ---
 
@@ -218,7 +218,7 @@ sequenceDiagram
 
 ## Project Structure
 ```
-MCP-Build-Rich-Context-AI-Apps-with-Anthropic/
+scholar-ai/
 ├── .github/
 │   └── workflows/
 │       ├── deploy-mcp-server.yml    # MCP Server CI/CD
@@ -264,7 +264,7 @@ MCP-Build-Rich-Context-AI-Apps-with-Anthropic/
 #### 1. Clone the Repository
 ```bash
 git clone https://github.com/AvinashBolleddula/scholar-ai.git
-cd MCP-Build-Rich-Context-AI-Apps-with-Anthropic
+cd scholar-ai
 ```
 
 #### 2. Set Up MCP Server
@@ -494,7 +494,7 @@ flowchart LR
 
     subgraph Cloud Run
         MCP["MCP Server<br/>───────────────<br/>Min: 1 instance<br/>Max: 10 instances<br/>Memory: 1Gi<br/>Port: 8000"]
-        API["FastAPI Client<br/>───────────────<br/>Min: 2 instances<br/>Max: 50 instances<br/>Memory: 2Gi<br/>Port: 8001"]
+        API["FastAPI Client<br/>───────────────<br/>Min: 2 instances<br/>Max: 10 instances<br/>Memory: 2Gi<br/>Port: 8001"]
     end
 
     subgraph Storage
@@ -549,11 +549,11 @@ gcloud run deploy fastapi-client \
   --region us-central1 \
   --allow-unauthenticated \
   --min-instances 2 \
-  --max-instances 50 \
+  --max-instances 10 \
   --concurrency 80 \
   --cpu 2 \
   --memory 2Gi \
-  --timeout 30 \
+  --timeout 150 \
   --port 8001 \
   --set-env-vars="MCP_SERVER_URL=...,MCP_API_KEY=...,ANTHROPIC_API_KEY=...,FASTAPI_API_KEY=..."
 ```
